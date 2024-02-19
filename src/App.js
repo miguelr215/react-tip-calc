@@ -28,8 +28,12 @@ export default function App() {
       <Bill billAmt={billAmt} onBillAmtChange={handleBillAmtChange} />
       <YourTip tip={yourTip} onYourTipChange={handleYourTipChange} />
       <FriendTip tip={friendTip} onFriendTipChange={handleFriendTipChange} />
-      <Result billAmt={billAmt} yourTip={yourTip} friendTip={friendTip} />
-      <ResetBtn onReset={handleReset} />
+      {billAmt > 0 && (
+        <>
+          <Result billAmt={billAmt} yourTip={yourTip} friendTip={friendTip} />
+          <ResetBtn onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
